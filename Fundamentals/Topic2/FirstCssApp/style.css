@@ -1,0 +1,70 @@
+* {
+  /* color: rgb(19, 168, 113); */
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+/* p {
+  color: aqua;
+  background-color: red;
+  padding: 10px;
+  font-size: 52px;
+  font-weight: 600;
+} */
+
+.text_para {
+  /* color: aqua !important; */
+  color: aqua;
+  background-color: yellow;
+  padding: 10px;
+  font-size: 52px;
+  font-weight: 600;
+  /* border-width: 5px;
+  border-style: solid;
+  border-color: blueviolet; */
+  /* border-top: 10px solid burlywood; */
+  border: 10px solid burlywood;
+  border-radius: 20px;
+  /* border-radius: 5px 5px 20px 20px; */
+}
+
+.text_danger {
+  color: red;
+}
+
+.text_warning {
+  color: orange;
+}
+
+/* #text_id_para {
+  color: aqua;
+  background-color: red;
+  padding: 10px;
+  font-size: 52px;
+  font-weight: 600;
+} */
+
+.content {
+  width: 700px;
+  height: 400px;
+  background-color: red;
+  background-image: url("https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg");
+  /* background-repeat: repeat-x; */
+  background-size: cover;
+  /* margin-top: 100px;
+  margin-right: 40px;
+  margin-bottom: 70px;
+  margin-left: 20px; */
+  /* margin: 100px 40px 70px 20px; */
+  margin: 100px 50px;
+  padding: 100px;
+}
+
+.fontText {
+  font-size: 32px;
+  font-weight: 600;
+  /* font-family: "Times New Roman", Times, serif; */
+  text-align: center;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
