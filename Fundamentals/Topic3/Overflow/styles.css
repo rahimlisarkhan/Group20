@@ -11,6 +11,8 @@
   background-color: red;
   border-radius: 8px;
   overflow-y: auto;
+  transform: all 1s;
+  opacity: 0;
 }
 
 .list_item {
@@ -46,6 +48,66 @@
   background-color: rgb(24, 9, 157);
 } */
 
-.list_item:nth-child(n + 2) {
+/* .list_item:nth-child(n + 2) {
   background-color: rgb(24, 9, 157);
+} */
+
+.list_item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.list_item:hover {
+  background-color: orange;
+}
+
+.btn {
+  padding: 8px 12px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: rgb(2, 91, 2);
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  background-color: rgb(152, 152, 152);
+}
+
+/* input[name="fullname"] {
+  background-color: aqua;
+}
+
+input[name="fullname"]:focus {
+  background-color: rgb(29, 35, 200);
+} */
+
+input {
+  background-color: aqua;
+}
+
+input:focus {
+  background-color: rgb(29, 35, 200);
+  color: #fff;
+}
+
+input[name="gender"] + p {
+  color: rgb(1, 156, 156);
+}
+
+/* input[name="gender"]:checked + p {
+  color: red;
+} */
+
+input[name="gender"]:checked + .list {
+  opacity: 1;
+  transform: all 1s;
+}
+
+.btn:disabled:active {
+  transform: scale(1);
 }
