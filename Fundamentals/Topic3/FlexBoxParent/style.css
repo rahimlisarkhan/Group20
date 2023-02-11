@@ -1,25 +1,59 @@
 /* Parents */
 .flex-container {
   display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row-reverse; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-content: center; */
 
-  justify-content: space-evenly;
   /* flex-direction: row-reverse;
   flex-wrap: wrap; */
   /* flex-flow: row-reverse wrap; */
-  align-items: center;
+  /* align-items: center;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: center; */
 
   background-color: DodgerBlue;
-  height: 500px;
+  height: 700px;
 }
 
 /* Childs */
-.flex-container > div {
+.flex-item {
   background-color: #f1f1f1;
   width: 100px;
   height: 100px;
   margin: 10px;
   padding: 20px;
   font-size: 30px;
+}
+
+.flex-item:first-child {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  background-color: red;
+  /* order: 6; */
+}
+
+.flex-item:nth-child(2) {
+  background-color: cadetblue;
+  /* order: 3; */
+}
+
+.flex-item:nth-child(3) {
+  background-color: cadetblue;
+  /* order: 1; */
+}
+
+.flex-item:last-child {
+  background-color: blueviolet;
+  /* order: 2; */
+  align-self: flex-end;
+}
+
+.box-child {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
 }
