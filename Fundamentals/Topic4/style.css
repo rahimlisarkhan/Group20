@@ -1,0 +1,41 @@
+.box {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+
+  /* display: none; */
+  /* visibility: hidden; */
+
+  background-color: orange;
+
+  box-shadow: 0 0 10px 2px red;
+
+  /* transform: rotate(45deg); */
+  /* tr */
+  /* transform: translate(250px, 10px); */
+
+  transition: all 1s;
+
+  /* transition-delay: 2s; */
+
+  cursor: pointer;
+}
+
+.b {
+  display: none;
+  transform: rotateY(-180deg);
+}
+
+.box:hover {
+  /* transform: scaleX(2.95); */
+  /* transform: skewX(20deg); */
+  transform: rotateY(180deg);
+}
+
+.box:hover .a {
+  display: none;
+}
+
+.box:hover .b {
+  display: block;
+}

@@ -96,8 +96,13 @@ html {
 .about_info__title {
   font-size: 32px;
   font-weight: bold;
+  /* font-family: "Courier New", Courier, monospace; */
+  /* font-family: "Roboto", sans-serif; */
+  font-family: Roboto;
+  font-weight: bold;
   margin-bottom: 24px;
   letter-spacing: 2px;
+  text-shadow: 0 0 2px rgb(215, 17, 17);
 }
 
 .about_info__desc {

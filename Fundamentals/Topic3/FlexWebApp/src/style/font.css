@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+  font-family: Roboto;
+  src: url("../assent/font/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../assent/font/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: Popins;
+  src: url("../assent/font/Roboto/Roboto-Medium.ttf");
+}
