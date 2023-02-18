@@ -1,0 +1,32 @@
+/* 300 - 600 Mobile screen */
+/* 600 - 768 Tablet screen */
+/* 996 - 1200 Notebook */
+/* 1200- Big Notebook */
+
+/* max - 480px Mobile
+max- 768 - Tablet
+max - 996 - Notebook
+min 1200- Big Screen */
+
+@media screen and (max-width: 996px) {
+  .header {
+    background-color: green;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    background-color: blue;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .nav-ham {
+    display: block;
+  }
+}

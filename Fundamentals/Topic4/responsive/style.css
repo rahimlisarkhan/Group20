@@ -1,0 +1,25 @@
+.header {
+  background-color: red;
+  height: 100px;
+  display: flex;
+  padding: 24px;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+}
+.desktop-menu {
+  color: #ffff;
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li {
+  list-style: none;
+  padding: 12px;
+}
+
+.nav-ham {
+  display: none;
+}
