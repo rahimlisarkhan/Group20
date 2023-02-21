@@ -1,0 +1,13 @@
+:root {
+  --mainColor: #8dd626;
+  --textColor: #212121;
+
+  --mediumPadding: 12px;
+  --largePadding: 22px;
+
+  --titleLarge: 24px;
+
+  --cardBoxShadow: 0 0 2px 4px rgba(0, 0, 0, 0.516);
+
+  --cardWidth: 256px;
+}

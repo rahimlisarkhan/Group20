@@ -1,2 +1,45 @@
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 31px;
+}
 
+.about_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.about_info h2 {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 80px;
+  color: var(--textColor);
+}
+
+.about_info p {
+  color: var(--textColorGray);
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 24px;
+
+  font-family: var(--fontOpenSans);
+}
+
+.about_info button {
+  margin-top: 39px;
+  padding: 20px 24px;
+  background-color: var(--mainGreen);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s !important;
+}
+
+.about_info button:hover {
+  transform: scale(0.97);
+}

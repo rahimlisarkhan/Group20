@@ -2,4 +2,31 @@
   .nav-ham {
     display: block;
   }
+
+  .navbar-list {
+    display: none;
+  }
+
+  /* HomePage */
+  #about {
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .about_img img {
+    width: 80%;
+  }
+
+  .about_info {
+    text-align: center;
+  }
+
+  .about_info h2 {
+    font-size: 32px !important;
+    line-height: 48px !important;
+  }
+
+  .logo_title {
+    display: none;
+  }
 }

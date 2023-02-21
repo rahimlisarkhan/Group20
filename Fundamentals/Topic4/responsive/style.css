@@ -1,9 +1,10 @@
 .header {
-  background-color: red;
+  background-color: var(--mainColor);
   height: 100px;
   display: flex;
-  padding: 24px;
+  padding: var(--largePadding);
   align-items: center;
+  box-shadow: var(--cardBoxShadow);
 }
 
 .logo img {
@@ -17,9 +18,17 @@
 
 .nav ul li {
   list-style: none;
-  padding: 12px;
+  padding: var(--mediumPadding);
 }
 
 .nav-ham {
   display: none;
+}
+
+.container {
+  color: var(--mainColor);
+}
+
+.card {
+  width: var(--cardWidth);
 }
