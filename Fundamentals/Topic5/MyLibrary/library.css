@@ -1,0 +1,70 @@
+/* Background Colors */
+
+.bg-orange {
+  background-color: orange;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+/* Text Colors */
+
+.text-orange {
+  color: orange;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.text-green {
+  color: green;
+}
+
+/* Margin Top */
+.mt-small {
+  margin-top: 8px;
+}
+
+.mt-medium {
+  margin-top: 12px;
+}
+
+.mt-large {
+  margin-top: 16px;
+}
+
+/* Margin Bottom */
+.mb-small {
+  margin-bottom: 8px;
+}
+
+.mb-medium {
+  margin-bottom: 12px;
+}
+
+.mb-large {
+  margin-bottom: 16px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.shadow-box {
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.569);
+  opacity: 0.8;
+}

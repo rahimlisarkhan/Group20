@@ -1,0 +1,12 @@
+.title {
+  width: 200px;
+}
+
+.box {
+  display: flex;
+}
+
+.form_custom:focus {
+  box-shadow: none;
+  border-color: red;
+}
