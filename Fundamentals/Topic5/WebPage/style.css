@@ -1,0 +1,16 @@
+/* html {
+  scroll-behavior: smooth;
+} */
+
+.bg-custum-navbar {
+  background-color: rgb(26, 74, 153) !important;
+}
+
+.travel_card_hover {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.travel_card_hover:hover {
+  transform: scale(0.99);
+}
