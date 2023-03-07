@@ -133,14 +133,20 @@
 
 // var c = a + b;
 
-// c = 5;
-
 // var d = c;
 
-// console.log("c", c);
-// console.log("d", d);
+// c = 5;
 
-var array = [5, 6, "Hello", true, false, null, 12, 29, [1, 2], 125];
+// console.log("c", c); //5
+// console.log("d", d); //12
+
+// var array = [5, 6, "Hello", true, false, null, 12, 29, [1, 2], 125];
+
+// var array2 = array;
+
+// array[1] = "Goodbye";
+
+// console.log(array2);
 
 // console.log("array deyeri", array[5]);
 
@@ -160,10 +166,10 @@ var array = [5, 6, "Hello", true, false, null, 12, 29, [1, 2], 125];
 // var netice = array.push(101);
 // var netice = array.pop();
 // var netice = array.unshift(34);
-var netice = array.shift();
+// var netice = array.shift();
 
-console.log(netice);
-console.log(array);
+// console.log(netice);
+// console.log(array);
 
 // if (array.length === 0) {
 //   console.log("Loading...");
