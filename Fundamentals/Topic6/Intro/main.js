@@ -1,5 +1,5 @@
 // Data Type
-// Primitive - Integer, String, Boolean, Nullish, Undefined
+// Primitive - Integer, String, Boolean, Null, Undefined
 // InPrimitive - Array, Object, Function
 
 //Integer

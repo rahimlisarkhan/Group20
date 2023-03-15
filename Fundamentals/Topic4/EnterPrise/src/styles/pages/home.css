@@ -43,3 +43,22 @@
 .about_info button:hover {
   transform: scale(0.97);
 }
+
+.box-general {
+  background-color: aqua;
+  margin: 50px;
+  height: 100px;
+  position: relative;
+}
+
+.box-general::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+}

@@ -75,3 +75,5 @@
 // 4.Beli dese "Yanininda hansi sous olsun suali verilir" Xeyr dese nus olsun deyilir
 // .Programda Kartof friyede beli deyen sous adinida yazan istifadeciye sonra alert mesaji
 // "Dadli filan souslu friniz steak ile artiq hazirlanir" alert mesaji verilsin
+
+document.write(100);
