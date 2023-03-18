@@ -270,25 +270,114 @@ var heroes = [
   "Blue Beetle",
   "Captain Atom",
 ];
-var booksOnMyShelf = [
-  "Calculus Early Transcendentals",
-  "Ravens",
-  "The Self Illusion",
-  "Harry Potter",
-];
-var thingsInFrontOfMe = ["Laptop", "Beanbag", "Cats", "Slippers"];
-var howIFeel = ["Sleep Deprived", "Wired on Coffee", "Excited"];
+// var booksOnMyShelf = [
+//   "Calculus Early Transcendentals",
+//   "Ravens",
+//   "The Self Illusion",
+//   "Harry Potter",
+// ];
+// var thingsInFrontOfMe = ["Laptop", "Beanbag", "Cats", "Slippers"];
+// var howIFeel = ["Sleep Deprived", "Wired on Coffee", "Excited"];
 
-function brandsCap(array) {
-  // For Loop for Heroes
-  for (var j = 0; j < array.length; j++) {
-    console.log(array[j]);
-  }
-  console.log("---------");
-}
+// function brandsCap(array) {
+//   // For Loop for Heroes
+//   for (var j = 0; j < array.length; j++) {
+//     console.log(array[j]);
+//   }
+//   console.log("---------");
+// }
 
-brandsCap(brands);
-brandsCap(heroes);
-brandsCap(booksOnMyShelf);
-brandsCap(thingsInFrontOfMe);
-brandsCap(howIFeel);
+// brandsCap(brands);
+// brandsCap(heroes);
+// brandsCap(booksOnMyShelf);
+// brandsCap(thingsInFrontOfMe);
+// brandsCap(howIFeel);
+
+// var gender = "female";
+// var age = 16;
+
+// var personName =
+//   gender === "female" ? (age >= 18 ? "Mrs. Marry" : "Marry") : "John";
+
+// // var personName = "John";
+
+// // if (gender === "female") {
+// //   personName = "Marry";
+
+// //   if (age >= 18) {
+// //     personName = "Mrs. Marry";
+// //   }
+// // } else {
+// //   personName = "John";
+// // }
+
+// console.log(personName);
+
+// function str_count(soz, herf) {
+//   var count = 0;
+
+//   count += 1;
+// }
+
+// console.log(str_count("Salam Aleykum", "a")); //3
+
+// var text = "Aleykum salam";
+// var searchtext = "a";
+
+// function str_count(soz, herf) {
+//   var textarr = soz.split("");
+
+//   var count = 0;
+
+//   for (var i in textarr) {
+//     if (textarr[i] == herf) {
+//       count += 1;
+//     }
+//   }
+
+//   return count;
+// }
+
+// str_count(text, searchtext);
+
+// function countLetter(word, letter) {
+//   var count = 0;
+
+//   for (var i = 0; i < word.length; i++) {
+//     var littleWord = word[i].toLowerCase();
+
+//     if (littleWord === letter) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countLetter("HellLLLLLo", "l"));
+
+// function evenOrOdd(number) {
+//   if (number % 2 === 0) {
+//     return "Even";
+//   }
+
+//   return "Odd";
+// }
+
+// console.log(evenOrOdd(9));
+
+// function solution(str) {
+//   var result = str.split("").reverse().join("");
+
+//   return result;
+// }
+
+// function solution(word) {
+//   let reverseText = "";
+//   for (let letter of word) {
+//     reverseText = letter + reverseText;
+//   }
+//   return reverseText;
+// }
+
+// console.log(solution("world"));

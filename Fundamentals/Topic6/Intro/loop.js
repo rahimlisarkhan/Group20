@@ -59,8 +59,22 @@
 
 // console.log(person);
 
-var name = "Watermaloon";
+// var name = "Watermaloon";
 
-for (var i = 0; i < name.length; i = i + 1) {
-  console.log("i: ", name[i]);
-}
+// for (var i = 0; i < name.length; i = i + 1) {
+//   console.log("i: ", name[i]);
+// }
+
+// for (var i = 0; i < 34; i += 3) {
+//   console.log(i);
+
+//   // if (i === 9) {
+//   //   break;
+//   // }
+
+//   if (i === 9) {
+//     continue;
+//   }
+
+//   console.log("Hello");
+// }
