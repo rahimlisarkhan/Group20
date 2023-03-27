@@ -1,4 +1,4 @@
-var numbersArr = [1, 2, 3, 9, 10];
+// var numbersArr = [1, 2, 3, 9, 10];
 
 // var fruits = ["banana", "apple", "pieapple"]; // "banana-apple-pieapple"
 
@@ -55,7 +55,7 @@ var numbersArr = [1, 2, 3, 9, 10];
 //   //     return "Sehf element";
 //   //   }
 
-//   return `<p>${el}</p>`;
+//   return `<div> <p>${el}</p></div>`;
 // });
 
 // console.log("result", result);
@@ -174,51 +174,51 @@ var numbersArr = [1, 2, 3, 9, 10];
 
 // console.log(findI);
 
-function checkPassword(password) {
-  var alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ]
-    .join("")
-    .toUpperCase();
+// function checkPassword(password) {
+//   var alphabet = [
+//     "a",
+//     "b",
+//     "c",
+//     "d",
+//     "e",
+//     "f",
+//     "g",
+//     "h",
+//     "i",
+//     "j",
+//     "k",
+//     "l",
+//     "m",
+//     "n",
+//     "o",
+//     "p",
+//     "q",
+//     "r",
+//     "s",
+//     "t",
+//     "u",
+//     "v",
+//     "w",
+//     "x",
+//     "y",
+//     "z",
+//   ]
+//     .join("")
+//     .toUpperCase();
 
-  var passArr = password.split("");
+//   var passArr = password.split("");
 
-  var result = passArr.some(function (symbol) {
-    var isCapitalSymbol = alphabet.includes(symbol);
+//   var result = passArr.some(function (symbol) {
+//     var isCapitalSymbol = alphabet.includes(symbol);
 
-    if (isCapitalSymbol) {
-      return true;
-    }
+//     if (isCapitalSymbol) {
+//       return true;
+//     }
 
-    return false;
-  });
+//     return false;
+//   });
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(checkPassword("seYmur2121%"));
+// console.log(checkPassword("seYmur2121%"));
