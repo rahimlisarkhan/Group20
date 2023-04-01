@@ -100,7 +100,7 @@
 
 // // // console.log(h5Tag.previousElementSibling);
 
-// h5Tag.style.padding = `${h5Tag.offsetWidth / 100}px`;
+h5Tag.style.padding = `${h5Tag.offsetWidth / 100}px`;
 // console.log(h5Tag.offsetWidth);
 
 // if (h5Tag.scrollTop === 500) {

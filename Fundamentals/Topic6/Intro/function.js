@@ -381,3 +381,21 @@ var heroes = [
 // }
 
 // console.log(solution("world"));
+
+function multible(num) {
+  return num * num;
+}
+
+function minus(lastValue) {
+  var result = multible(lastValue); //400
+
+  return result - 13;
+}
+
+function sum(a, b) {
+  var resultSum = a + b;
+
+  return minus(resultSum); // 387
+}
+
+console.log(sum(8, 12)); //387
