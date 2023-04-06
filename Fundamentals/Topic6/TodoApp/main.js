@@ -57,8 +57,8 @@ function removeItem(index) {
 function editItem(index, itemData) {
   console.log("itemData", itemData);
 
-  var editInput = document.querySelector("#editInput");
   editInput.value = itemData;
+
   currentItemIndex = index;
 }
 
@@ -154,6 +154,29 @@ function saveItemChange() {
 
 //Events
 todoAddButton.onclick = addTodoItem;
+todoInput.onkeypress = function (e) {
+  console.log(e.keyCode);
+
+  // if (e.keyCode === 13) {
+  //   addTodoItem();
+  // }
+
+  if (e.key === "Enter") {
+    addTodoItem();
+  }
+};
+
+editInput.onkeydown = function (e) {
+  console.log(e.keyCode);
+
+  // if (e.keyCode === 13) {
+  //   addTodoItem();
+  // }
+
+  if (e.key === "Enter") {
+    saveItemChange();
+  }
+};
 
 todoClearButton.addEventListener("click", clearList);
 saveModalButton.addEventListener("click", saveItemChange);
