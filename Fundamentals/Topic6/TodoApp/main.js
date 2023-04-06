@@ -1,13 +1,5 @@
-var todoInput = document.querySelector("#todoInput");
-
-var todoAddButton = document.querySelector("#todoAddButton");
-var todoClearButton = document.querySelector("#todoClearButton");
-
-var todoAlert = document.getElementById("todoAlert");
-
-var todoList = document.querySelector("#todoList");
-
 var todoListData = [];
+var currentItemIndex = null;
 
 //Fucntions
 function addTodoItem() {
@@ -24,7 +16,7 @@ function addTodoItem() {
 
   console.log(todoAlert);
 
-  todoAlert.innerHTML = "Succesfully added";
+  todoAlert.innerText = "Succesfully added";
   todoAlert.classList.remove("d-none");
   todoAlert.classList.remove("alert-danger");
 
@@ -62,6 +54,28 @@ function removeItem(index) {
   showTodoItems();
 }
 
+function editItem(index, itemData) {
+  console.log("itemData", itemData);
+
+  var editInput = document.querySelector("#editInput");
+  editInput.value = itemData;
+  currentItemIndex = index;
+}
+
+function handleActionItem(method, index, data) {
+  switch (method) {
+    case "edit":
+      editItem(index, data);
+      break;
+    case "remove":
+      removeItem(index);
+      break;
+
+    default:
+      alert("Please choose correct method name");
+  }
+}
+
 function clearList() {
   todoListData = [];
 
@@ -85,15 +99,26 @@ function showTodoItems() {
     .map(function (item, index) {
       return `<li class="list-group-item d-flex justify-content-between">
     ${index + 1}. ${item}
-    <button
-      type="button"
-      class="btn btn-danger btn-sm"
-      id="todoRemoveButton"
-      onclick="removeItem(${index})"
-    >
-      remove
-    </button>
-  </li>`;
+    <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-outline-light btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+                id="todoRemoveButton"
+                onclick="handleActionItem('edit', ${index}, '${item}')"
+              >
+                <i class="fa-solid fa-pen-to-square text-success-emphasis"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-light btn-sm"
+                id="todoRemoveButton"
+                onclick="handleActionItem('remove', ${index})"
+              >
+                <i class="fa-solid fa-trash text-danger-emphasis"></i>
+              </button>
+            </div>`;
     })
     .join("");
 
@@ -111,11 +136,24 @@ function showTodoItems() {
 
   //     todoList.appendChild(li);
   //   }
+}
 
-  console.log("todoListData: ", todoListData);
+function saveItemChange() {
+  todoListData[currentItemIndex] = editInput.value;
+
+  todoAlert.innerText = "Succesfully changed item!";
+  todoAlert.classList.remove("d-none");
+  todoAlert.classList.remove("alert-danger");
+
+  // todoAlert.classList.add("d-block");
+  todoAlert.classList.add("alert-success");
+  todoAlert.classList.add("d-block");
+
+  showTodoItems();
 }
 
 //Events
 todoAddButton.onclick = addTodoItem;
 
 todoClearButton.addEventListener("click", clearList);
+saveModalButton.addEventListener("click", saveItemChange);
