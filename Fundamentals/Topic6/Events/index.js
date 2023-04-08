@@ -52,27 +52,27 @@ textInput.onkeypress = function (e) {
   console.log(e);
 };
 
-// textInput.oninput = function (e) {
-//   console.log(e.target.value);
+textInput.oninput = function (e) {
+  console.log(e.target.value);
 
-//   var value = e.target.value;
+  var value = e.target.value;
 
-//   e.target.style.outlineColor = value.length < 10 ? "red" : "green";
+  e.target.style.outlineColor = value.length < 10 ? "red" : "green";
 
-//   textsizeEl.style.color = value.length > 30 ? "red" : "black";
-//   textsizeEl.innerText = value.length;
+  textsizeEl.style.color = value.length > 30 ? "red" : "black";
+  textsizeEl.innerText = value.length;
 
-//   var resultList = arr.filter(function (el) {
-//     if (el.toLowerCase().includes(value.toLowerCase())) return true;
+  var resultList = arr.filter(function (el) {
+    if (el.toLowerCase().includes(value.toLowerCase())) return true;
 
-//     return false;
-//   });
+    return false;
+  });
 
-//   searchListEl.innerHTML = resultList
-//     .map(function (el, index) {
-//       return `<li>${index + 1}. ${el} </li>`;
-//     })
-//     .join("");
+  searchListEl.innerHTML = resultList
+    .map(function (el, index) {
+      return `<li>${index + 1}. ${el} </li>`;
+    })
+    .join("");
 
-//   console.log(resultList);
-// };
+  console.log(resultList);
+};
