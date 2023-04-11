@@ -62,7 +62,21 @@ function editItem(index, itemData) {
   currentItemIndex = index;
 }
 
-function handleActionItem(method, index, data) {
+// function handleActionItem(method, index, data) {
+//   switch (method) {
+//     case "edit":
+//       editItem(index, data);
+//       break;
+//     case "remove":
+//       removeItem(index);
+//       break;
+
+//     default:
+//       alert("Please choose correct method name");
+//   }
+// }
+
+var handleActionItem = (method, index, data) => {
   switch (method) {
     case "edit":
       editItem(index, data);
@@ -74,7 +88,7 @@ function handleActionItem(method, index, data) {
     default:
       alert("Please choose correct method name");
   }
-}
+};
 
 function clearList() {
   todoListData = [];
