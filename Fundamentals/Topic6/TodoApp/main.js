@@ -62,20 +62,6 @@ function editItem(index, itemData) {
   currentItemIndex = index;
 }
 
-// function handleActionItem(method, index, data) {
-//   switch (method) {
-//     case "edit":
-//       editItem(index, data);
-//       break;
-//     case "remove":
-//       removeItem(index);
-//       break;
-
-//     default:
-//       alert("Please choose correct method name");
-//   }
-// }
-
 var handleActionItem = (method, index, data) => {
   switch (method) {
     case "edit":
@@ -171,10 +157,6 @@ todoAddButton.onclick = addTodoItem;
 todoInput.onkeypress = function (e) {
   console.log(e.keyCode);
 
-  // if (e.keyCode === 13) {
-  //   addTodoItem();
-  // }
-
   if (e.key === "Enter") {
     addTodoItem();
   }
@@ -182,10 +164,6 @@ todoInput.onkeypress = function (e) {
 
 editInput.onkeydown = function (e) {
   console.log(e.keyCode);
-
-  // if (e.keyCode === 13) {
-  //   addTodoItem();
-  // }
 
   if (e.key === "Enter") {
     saveItemChange();
