@@ -1,58 +1,73 @@
-class Animal {
-  type = null;
-  eat = null;
-  name = null;
-  #bla = null;
+class DOMElements {
+  h1 = document.querySelector("#result");
+  gazBtn = document.querySelector("#gaz");
+  brakeBtn = document.querySelector("#brake");
+  showBtn = document.querySelector("#show");
 
-  constructor(type, name, eat) {
-    this.type = type;
-    this.eat = eat;
-    this.name = name;
-    this.#bla = "Test";
-  }
-
-  voice(animalVoice) {
-    console.log("Hey:!!!! ", animalVoice);
+  showElements() {
+    console.log("---------");
+    console.log(h1);
+    console.log(gazBtn);
+    console.log(brakeBtn);
+    console.log(showBtn);
+    console.log("---------");
   }
 }
 
-class WaterAnimal extends Animal {
-  liveTime = null;
+class CarStructer extends DOMElements {
+  #marka = null;
+  #model = null;
+  static material = "Demir";
+  speed = 0;
+  dataInfoCarGaz = [];
 
-  constructor(type, name, eat, time) {
+  constructor(marka, model) {
     super();
-    this.eat = eat;
-    this.type = type;
-    this.name = name;
-    this.liveTime = time;
+
+    this.#marka = marka;
+    this.#model = model;
   }
 
-  swimTime(time) {
-    console.log("This animal", time);
-    console.log("Test", this.#bla);
+  brake(s) {
+    this.speed = this.speed <= 0 ? 0 : s ? this.speed - s : this.speed - 10;
+
+    this.show();
+  }
+
+  gaz(s) {
+    console.log("this.speed", this.speed);
+
+    var handleSpeed = s ? this.speed + s : this.speed + 10;
+
+    this.speed = handleSpeed;
+
+    // this.dataInfoCarGaz.push(s ? s : 10);
+    this.dataInfoCarGaz.push(s ?? 10);
+    // this.dataInfoCarGaz.push(s || 10);
+
+    this.show();
+  }
+
+  show() {
+    console.log(this.dataInfoCarGaz);
+    this.h1.innerHTML = this.speed;
   }
 }
 
-// var balina = new WaterAnimal("memeli", "Mavi Balina", "baliq", 30);
+CarStructer.speed;
 
-// console.log(balina);
+var germanyCar = new CarStructer("Mercedes", "X6");
 
-class YasilBasOrdek extends WaterAnimal {
-  age = null;
+var japanModelCar = new CarStructer("Honda", "none");
 
-  constructor(type, name, eat, time, age) {
-    super(type, name, eat, time);
+// germanyCar.gaz(20);
 
-    this.age = age;
-  }
+japanModelCar.gazBtn.addEventListener("click", function () {
+  japanModelCar.gaz(40);
+});
 
-  fly() {
-    console.log(this.name);
-  }
-}
+japanModelCar.brakeBtn.addEventListener("click", function () {
+  japanModelCar.brake(5);
+});
 
-var uglyDuck = new YasilBasOrdek("qus", "Dafi", "ot", 720, 47);
-
-uglyDuck.fly();
-uglyDuck.voice("dak dak");
-// console.log("uglyDuck", uglyDuck);
+console.log("germanyCar", germanyCar);
