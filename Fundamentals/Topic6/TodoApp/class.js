@@ -1,3 +1,4 @@
+// class TodoApp extends ReactComponents {
 class TodoApp {
   gameName = null;
 
@@ -169,6 +170,10 @@ class TodoApp {
 
     this.showTodoItems();
   }
+
+  //   render(){
+
+  //   }
 }
 
 var todoapp = new TodoApp("Mehin Melikova");
