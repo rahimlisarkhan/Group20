@@ -8,7 +8,7 @@
 // var h1Tag = document.getElementsByTagName("p")[0];
 // var h1Tag = document.getElementsByClassName("bg-text")[0];
 // var h1Tag = document.querySelector(".bg-text");
-// // var h1Tag = document.querySelectorAll("#title");
+// var h1Tag = document.querySelectorAll("#title");
 // // var h1Tag = document.querySelector("h1 span .color");
 
 // h1Tag.innerText = "Dom JS";
