@@ -159,15 +159,35 @@
 // // calls the printInfo function. Which subsequently calls the nestedFunction()
 // cat.printInfo();
 
-function twotop() {
-  function two(a) {
-    alert("Two: " + a);
-  }
+// function twotop() {
+//   function two(a) {
+//     alert("Two: " + a);
+//   }
 
-  var a = 13;
-  two(a);
-  return "somthing";
+//   two(a);
+//   var a = 13;
+//   return "somthing";
+// }
+
+// // What will get alerted?
+// twotop();
+
+var a = 3;
+
+function Sum() {
+  var a = 2 + 3;
+  // console.log("Sum alemi daxilindeki a:", a);
+
+  B();
+  console.log("Sum alemi daxilindeki a:", a);
 }
 
-// What will get alerted?
-twotop();
+function B() {
+  console.log("B alemi daxilindeki a:", a);
+}
+
+Sum();
+
+function A() {}
+
+var A = function A() {};
