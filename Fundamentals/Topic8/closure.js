@@ -99,3 +99,9 @@ gulxanim();
 gulxanim();
 gulxanim();
 gulxanim();
+
+{
+  let a = 5;
+}
+
+console.log(a);
