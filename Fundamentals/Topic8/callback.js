@@ -121,3 +121,63 @@ var arr3 = [1, 2, 3, 4];
 // const firebase = new Fireabase("31322332223");
 
 // var arrTelebeler = firebase.getOxu("telebeler");
+
+// function DisleriYu() {}
+// function isGet() {}
+// function SufreniYigisdir() {}
+
+// function Yemek(novbetiIs) {
+//   const yediQutardi = true;
+
+//   if (yediQutardi) {
+//     novbetiIs();
+//   } else {
+//     console.log("Cox ye");
+//   }
+// }
+
+// Yemek(isGet);
+// Yemek(DisleriYu);
+// Yemek(SufreniYigisdir);
+
+// DisleriYu();
+
+// function Prius() {
+//   return 10;
+// }
+
+// function BMW() {
+//   return 20;
+// }
+
+// function MasinSur(masin, time) {
+//   const surur = true;
+
+//   if (surur) {
+//     const result = masin();
+
+//     return time * result;
+//   }
+
+//   return 0;
+// }
+
+// MasinSur(BMW, 3);
+// MasinSur(Prius, 4);
+
+// function MehelleMarketi(aErzagi, bErzagi) {
+//   return `${aErzagi} ve ${bErzagi}`;
+// }
+
+// function Mertebe2DekiQonsu(aErzagi, bErzagi) {
+//   return `${aErzagi} ve ${bErzagi} Allah haqqqi bizde yoxdu!`;
+// }
+
+// function YasliNene(sebeti) {
+//   const hazirladigiYemekler = sebeti("Yumurta", "Pendir");
+
+//   return `Eziz nevelerim gelin ${hazirladigiYemekler} bunlari yeyin`;
+// }
+
+// console.log(YasliNene(MehelleMarketi));
+// console.log(YasliNene(Mertebe2DekiQonsu));
