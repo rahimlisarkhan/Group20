@@ -43,8 +43,14 @@ function showMovie(movies) {
     .map((movie) => {
       const { Title, Poster, Type, Year } = movie;
 
+      console.log(Title, Poster);
+
       return `<div class="card">
-        <img height="200" src="${Poster}" />
+        <img width="200" height="200" src="${
+          Poster === "N/A"
+            ? "https://i.ytimg.com/vi/GV3HUDMQ-F8/maxresdefault.jpg"
+            : Poster
+        }" />
         <h1>${Title.length > 10 ? Title.slice(0, 10) + "..." : Title}</h1>
         <p>${Type}</p>
         <p>${Year}</p>
@@ -53,31 +59,25 @@ function showMovie(movies) {
     .join("");
 }
 
-function getMovie(title) {
-  //   const myPromise = fetch(`http://www.omdbapi.com/?apikey=a407a7b3&t=${title}`);
-  const myPromise = fetch(
-    `http://www.omdbapi.com/?apikey=a407a7b3&s=${title}&limit=20`
-  );
+async function getMovie(title) {
+  try {
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=a407a7b3&s=${title}&limit=20`
+    );
 
-  myPromise
-    .then((response) => {
-      const mySecond = response.json();
+    const data = await response.json();
 
-      return mySecond;
-    })
-    .then((data) => {
-      if (data?.Response === "False") {
-        // alert("Tapilmadi");
-        return;
-      }
+    if (data?.Response === "False") {
+      alert("Tapilmadi");
+      return;
+    }
 
-      console.log("data", data);
+    console.log("data", data);
 
-      showMovie(data.Search);
-    })
-    .catch((err) => {
-      console.log("err", err);
-    });
+    showMovie(data.Search);
+  } catch (err) {
+    console.log("err", err);
+  }
 }
 
 // document.querySelector("#movieTitle").addEventListener("input", function (e) {
