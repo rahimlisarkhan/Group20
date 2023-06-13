@@ -1,0 +1,3 @@
+function convertToTime(sec) {
+  return ``;
+}
