@@ -92,7 +92,7 @@ var time = new Date();
 // }
 
 function offerCountDown() {
-  var userWantTime = prompt("Offerin bitme vaxtini qeyd edin");
+  var userWantTime = prompt("Offerin bitme vaxtini qeyd edin"); ///2023-04-23
 
   var today = new Date();
   var offerDay = new Date(userWantTime); //2023-04-23
