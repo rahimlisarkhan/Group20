@@ -8,6 +8,7 @@ export class TodoContent extends Component {
     super();
     this.state = {
       list: [],
+      text: "",
     };
 
     this.addTodo = this.addTodo.bind(this);

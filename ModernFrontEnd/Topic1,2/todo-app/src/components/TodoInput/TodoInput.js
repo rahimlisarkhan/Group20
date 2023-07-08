@@ -8,15 +8,15 @@ export class TodoInput extends Component {
       isShowAlert: true,
     };
 
-    this.handleChangeText = this.handleChangeText.bind(this);
+    // this.handleChangeText = this.handleChangeText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangeText(e) {
-    const text = e.target.value;
+  // handleChangeText(e) {
+  //   const text = e.target.value;
 
-    this.setState({ text });
-  }
+  //   this.setState({ text });
+  // }
 
   handleSubmit() {
     if (!this.state.text.trim()) {
