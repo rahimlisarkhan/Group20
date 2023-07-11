@@ -8,15 +8,15 @@ export class TodoInput extends Component {
       isShowAlert: true,
     };
 
-    // this.handleChangeText = this.handleChangeText.bind(this);
+    this.handleChangeText = this.handleChangeText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // handleChangeText(e) {
-  //   const text = e.target.value;
+  handleChangeText(e) {
+    const text = e.target.value;
 
-  //   this.setState({ text });
-  // }
+    this.setState({ text });
+  }
 
   handleSubmit() {
     if (!this.state.text.trim()) {
@@ -27,12 +27,16 @@ export class TodoInput extends Component {
     this.props.addTodo(this.state.text);
 
     this.setState({ text: "", isShowAlert: false });
+
+    // setText("text")
+    // setShowAler(false)
   }
 
   render() {
     return (
       <div>
         <input value={this.state.text} onChange={this.handleChangeText} />
+        {/* <input onchange="handleChangeText()" /> */}
         <button onClick={this.handleSubmit}>Send</button>
         {this.state.isShowAlert && <span>Error text</span>}
       </div>
