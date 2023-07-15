@@ -9,11 +9,15 @@ export class TodoContent extends Component {
     this.state = {
       list: [],
       text: "",
+      isShowInfo: false,
     };
 
     this.addTodo = this.addTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
     this.uptTodo = this.uptTodo.bind(this);
+    this.uptTodo = this.uptTodo.bind(this);
+    this.onHandleHover = this.onHandleHover.bind(this);
+    this.onHandleOutHover = this.onHandleOutHover.bind(this);
   }
 
   addTodo(title) {
@@ -30,6 +34,15 @@ export class TodoContent extends Component {
     const newList = [todo, ...this.state.list];
 
     this.setState({ list: newList });
+  }
+
+  onHandleHover() {
+    console.log("Enter area");
+    this.setState({ isShowInfo: true });
+  }
+  onHandleOutHover() {
+    console.log("Out area");
+    this.setState({ isShowInfo: false });
   }
 
   removeTodo(todoId) {
@@ -59,11 +72,38 @@ export class TodoContent extends Component {
     this.setState({ list: copyList });
   }
 
+  // renderKenanComponent(type) {
+  //   switch (type) {
+  //     case "ADD":
+  //       return <A />;
+
+  //     case "Modify":
+  //       return <B />;
+  //     case "DELETE":
+  //       return <C />;
+  //     default:
+  //       return "";
+  //   }
+  // }
+
   render() {
+    // const content =
+    //   this.props.list.length > 3 ? (
+    //     <div>Big info</div>
+    //   ) : (
+    //     <span>Add your info</span>
+    //   );
+
     console.log("this content", this.state.list);
     return (
-      <div>
+      <div
+        onMouseEnter={this.onHandleHover}
+        onMouseLeave={this.onHandleOutHover}
+      >
+        {/* {content} */}
+        {/* {this.renderKenanComponent(this.props.sectionType)} */}
         <h1>Todo app</h1>
+        {this.state.isShowInfo && <h2>Welcome Your todo App</h2>}
         <TodoInput addTodo={this.addTodo} />
         <TodoList
           list={this.state.list}

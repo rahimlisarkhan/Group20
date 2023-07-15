@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 // import demoDress from "../assets/images/cover 2.jpeg";
 // import demoDress from "../assets/images/cover 2.jpeg";
 // import demoDress from "../assets/images/cover 2.jpeg";
@@ -12,6 +13,25 @@ const inlineCss = {
 };
 
 export class ProductCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+
+    this.azalt = this.azalt.bind(this);
+    this.artir = this.artir.bind(this);
+  }
+
+  azalt() {
+    const newCount = this.state.count <= 0 ? 0 : this.state.count - 1;
+    this.setState({ count: newCount });
+  }
+
+  artir() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
   renderTag(url) {
     let tag = url ? (
       <img src={url} className="card-img-top" alt={this.props.title} />
@@ -24,6 +44,15 @@ export class ProductCard extends Component {
 
   render() {
     const { img_url, title, price } = this.props;
+
+    // const azalt = () => {
+    //   const newCount = this.state.count <= 0 ? 0 : this.state.count - 1;
+    //   this.setState({ count: newCount });
+    // };
+
+    // const artir = () => {
+    //   this.setState({ count: this.state.count + 1 });
+    // };
 
     // let imageURL = img_url;
 
@@ -67,6 +96,15 @@ export class ProductCard extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{price}</p>
+            <div className="d-flex align-items-center gap-2">
+              <button onClick={this.azalt} disabled={this.state.count === 0}>
+                <AiOutlineMinus />
+              </button>
+              <span>{this.state.count}</span>
+              <button onClick={this.artir}>
+                <AiOutlinePlus />
+              </button>
+            </div>
             <a href="#" className="btn btn-danger">
               Add basket
             </a>

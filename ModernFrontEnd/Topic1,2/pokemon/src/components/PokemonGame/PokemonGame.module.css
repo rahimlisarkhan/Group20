@@ -1,0 +1,24 @@
+.playButton {
+  padding: 10px 40px;
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.playButton:active {
+  background-color: orangered;
+}
+
+.playButton:hover {
+  background-color: rgb(208, 119, 86);
+}
+
+.playTitle {
+  font-size: 48px;
+  font-weight: bold;
+  color: orangered;
+}

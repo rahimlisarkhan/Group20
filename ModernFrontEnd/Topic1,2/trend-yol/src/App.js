@@ -81,23 +81,34 @@ export class App extends React.Component {
   render() {
     const isLoading = false;
 
-    console.log(this);
+    // const azalt = () => {
+    //   this.setState({ count: this.state.count - 1 });
+    // };
 
-    const azalt = () => {
-      this.setState({ count: this.state.count - 1 });
-    };
-
-    const artir = () => {
-      this.setState({ count: this.state.count + 1 });
-    };
+    // const artir = () => {
+    //   this.setState({ count: this.state.count + 1 });
+    // };
 
     return (
       <>
         <Header />
         <Container>
-          <h1>Count: {this.state.count}</h1>
-          <button onClick={azalt}>Azalt</button>
-          <button onClick={artir}>Artir</button>
+          {/* <div>
+            <h1>Count: {this.state.count}</h1>
+            <button onClick={azalt}>Azalt</button>
+            <button onClick={artir}>Artir</button>
+          </div>
+          <div>
+            <h1>Count: {this.state.count}</h1>
+            <button onClick={azalt}>Azalt</button>
+            <button onClick={artir}>Artir</button>
+          </div>
+          <div>
+            <h1>Count: {this.state.count}</h1>
+            <button onClick={azalt}>Azalt</button>
+            <button onClick={artir}>Artir</button>
+          </div> */}
+
           <Products
             listName="All products"
             products={data1}
