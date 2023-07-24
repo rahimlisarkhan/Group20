@@ -1,0 +1,13 @@
+.content {
+  background-color: rgb(249, 249, 249);
+  flex-grow: 4;
+  min-height: 100vh;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+
+  gap: 20px;
+}
