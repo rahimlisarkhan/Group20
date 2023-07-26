@@ -1,1 +1,0 @@
-export { PokemonGame } from "./PokemonGame";

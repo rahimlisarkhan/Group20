@@ -1,1 +1,0 @@
-export { PokemonTeam } from "./PokemonTeam";

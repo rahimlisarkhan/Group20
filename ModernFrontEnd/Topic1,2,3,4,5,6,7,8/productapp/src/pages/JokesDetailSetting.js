@@ -11,22 +11,19 @@
 
 import { useNavigate, useParams } from "react-router-dom";
 
-const JokesDetail = () => {
+const JokesDetailSetting = () => {
   const params = useParams();
 
-  let navigate = useNavigate();
+  //   let navigate = useNavigate();
   console.log(params);
 
   return (
     <main>
-      <h1>JokesDetail : {params.jokes_id}</h1>
-      <button onClick={() => navigate(`/jokes/${params.jokes_id}/setting`)}>
-        {/* <button onClick={() => navigate(`/jokes/${params.jokes_id}/setting/password`)}> */}
-        Setting
-      </button>
+      <h1>JokesDetailSetting : {params.jokes_id} | SETTING</h1>
+      {/* <button onClick={() => navigate("/product")}>product page</button> */}
     </main>
   );
 };
 
 // export default withRouter(ProductDetail)
-export default JokesDetail;
+export default JokesDetailSetting;

@@ -1,8 +1,0 @@
-.content {
-  background-color: rgb(226, 226, 226);
-  position: absolute;
-  left: -200%;
-  width: 30%;
-  min-height: 100vh;
-  transition: all 0.2s;
-}

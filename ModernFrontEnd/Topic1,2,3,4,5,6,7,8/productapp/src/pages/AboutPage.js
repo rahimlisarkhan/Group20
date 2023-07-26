@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 
 class AboutHR extends Component {
   render() {
@@ -31,6 +32,7 @@ export class AboutPage extends Component {
           <Route path="hr" element={<AboutHR />} />
           <Route path="/" element={<Navigate to="hr" replace />} />
           <Route path="work" element={<AboutWork />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* { !user && <Navigate to="/login" replace={true}/>} */}
       </main>

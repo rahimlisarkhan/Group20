@@ -5,7 +5,7 @@ import "styles/global.css";
 import "react-toastify/dist/ReactToastify.css";
 import { LifePage } from "pages/LifePage";
 import { Component } from "react";
-import Card from "pages/Card";
+import Card from "shared/components/Card";
 import { ErrorBoundary } from "shared/components/ErrorBoundary";
 import { getMovie } from "service/movie";
 import { JokesPage } from "pages/JokesPage";
