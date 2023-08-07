@@ -1,9 +1,12 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
+import { useGlobalState } from "shared/provider/GlobalProvider/useGlobalState";
 
 function MovieCard(props) {
   const navigate = useNavigate();
+
+  const { product } = useGlobalState();
 
   const defaultProps = {
     Title: "Title1",

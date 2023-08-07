@@ -1,38 +1,29 @@
 import MovieCard from "feature/home/components/MovieCard";
-import React, { Component } from "react";
+import React, { Component, useEffect, useLayoutEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { getMovies } from "services/movie";
+import { useGlobalState } from "shared/provider/GlobalProvider/useGlobalState";
+import { HomeProvider } from "shared/provider/HomeProvider";
+import { useHomeState } from "shared/provider/HomeProvider/useHomeState";
 
-export class Home extends Component {
-  constructor() {
-    super();
+const images = ["", "", ""];
 
-    this.state = {
-      movies: [],
-    };
-  }
+const Home = (props) => {
+  // const handleProcess = () => {
+  //   if (inputValue.length) {
+  //     alert("Process et");
+  //     return;
+  //   }
 
-  componentDidMount() {
-    const refetch = async () => {
-      const res = await getMovies();
-      console.log(res);
-      this.setState({ movies: res.data.Search });
-    };
+  //   navigate("/")
+  // };
 
-    refetch();
-  }
-
-  render() {
-    return (
-      <Row as="main">
-        {this.state.movies?.map((movie, index) => (
-          <Col key={"movie" + index} lg="3" md="3" sm="6">
-            <MovieCard {...movie} />
-          </Col>
-        ))}
-      </Row>
-    );
-  }
-}
+  return (
+    <HomeProvider>
+      <Home />
+    </HomeProvider>
+  );
+};
 
 export default Home;

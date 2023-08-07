@@ -1,13 +1,41 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {
+  Component,
+  createRef,
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { getMovieId } from "services/movie";
 
-export const Detailed = () => {
+const Detailed = ({ showTime }) => {
+  // const inputRef = createRef();
+  const inputRef = useRef();
+  const PI = useRef(3.14);
+
+  const ID = useId();
+
+  console.log(ID);
+
+  const time = useMemo(() => {
+    //19
+    const currentTime = new Date();
+
+    return currentTime.getHours();
+  }, [showTime]);
+
   const [info, setInfo] = useState(null);
   const [show, setShow] = useState(false);
 
   const { movie_id } = useParams();
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [inputRef.current]);
 
   useEffect(() => {
     //Component did mount
@@ -24,6 +52,12 @@ export const Detailed = () => {
     refetch();
   }, [movie_id]);
 
+  const handleSend = useCallback(() => {
+    // cagirilmamis bir funksiya callback
+    console.log(inputRef.current.value, movie_id);
+    inputRef.current.value = "";
+  }, [movie_id]);
+
   if (!info) {
     return <h1 className="display-4 text-white">Loading...</h1>;
   }
@@ -33,11 +67,16 @@ export const Detailed = () => {
       <Link to="../" className="btn btn-danger">
         Go back
       </Link>
+      <input ref={inputRef} />
+      <button onClick={handleSend}>Send {PI.current}</button>
       <div style={{ height: 300 }} className="d-flex gap-5 text-light p-4">
         <img className="img-fluid" src={info.Poster} />
 
         <ul>
-          <li className="h3"> Title: {info.Title} </li>
+          <li className="h3">
+            {" "}
+            Title: {info.Title} {time}{" "}
+          </li>
 
           {show && (
             <>
@@ -82,3 +121,15 @@ export const Detailed = () => {
 // }
 
 export default Detailed;
+
+class Acompknent {
+  pi = 31.4; //? useMemo bunun isin gorur rende rolmamis value kimi
+
+  handleSubmit() {} //? useCallback bunun isin gorur rende rolmamis method kimi
+
+  render() {
+    const pi = 31.4;
+
+    return <div></div>;
+  }
+}
