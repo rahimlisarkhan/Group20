@@ -1,31 +1,54 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useGlobalState } from "shared/provider/GlobalProvider/useGlobalState";
+import { shortName } from "utils/shortName";
 
-function MovieCard(props) {
+function MovieCard({
+  Title = "Title1",
+  Year = 2023,
+  Poster = "https://lumiere-a.akamaihd.net/v1/images/p_disney_elemental_v3_793_2a328b27.jpeg",
+  imdbID,
+  onFav,
+}) {
   const navigate = useNavigate();
 
-  const { product } = useGlobalState();
+  const { pathname } = useLocation();
 
-  const defaultProps = {
-    Title: "Title1",
-    Year: "2023",
-    Poster:
-      "https://lumiere-a.akamaihd.net/v1/images/p_disney_elemental_v3_793_2a328b27.jpeg",
-  };
+  const isFavPage = pathname.includes("/favorite");
 
-  const { Poster, imdbID, Year, Title } = props;
+  const {
+    state: { favorite },
+  } = useGlobalState();
+
+  let isFavorite = favorite.findIndex((item) => item.imdbID === imdbID) !== -1;
 
   return (
     <Card style={{ width: "14rem" }}>
-      <Card.Img variant="top" src={Poster ?? defaultProps.Poster} />
+      <Card.Img
+        variant="top"
+        height={300}
+        style={{ objectFit: "cover" }}
+        src={Poster}
+      />
       <Card.Body>
-        <Card.Title>{Title ?? defaultProps.Title}</Card.Title>
-        <Card.Text>{Year ?? defaultProps.Year}</Card.Text>
-        <Button variant="danger" onClick={() => navigate(`/movies/${imdbID}`)}>
-          Go somewhere
-        </Button>
+        <Card.Title>{shortName(Title, 15)}</Card.Title>
+        <Card.Text>{Year}</Card.Text>
+        <div className="d-flex gap-3">
+          {imdbID && (
+            <Button
+              variant="danger"
+              onClick={() => navigate(`/movies/${imdbID}`)}
+            >
+              Go somewhere
+            </Button>
+          )}
+          {!isFavPage && (
+            <Button variant={isFavorite ? "danger" : "warning"} onClick={onFav}>
+              {isFavorite ? "-" : "+"}
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );
