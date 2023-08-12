@@ -4,16 +4,20 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import { GlobalProvider } from "shared/provider/GlobalProvider";
+import { Provider } from "react-redux";
+import { store } from "shared/store";
+// import { GlobalProvider } from "shared/provider/GlobalProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <GlobalProvider>
+    <Provider store={store}>
+      <Router>
+        {/* <GlobalProvider> */}
         <App />
-      </GlobalProvider>
-    </Router>
+        {/* </GlobalProvider> */}
+      </Router>
+    </Provider>
   </React.StrictMode>
 );

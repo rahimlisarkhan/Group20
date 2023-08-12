@@ -8,9 +8,9 @@ function Header() {
   // const { user } = useGlobalState();
   const navigate = useNavigate();
 
-  const {
-    state: { favorite },
-  } = useGlobalState();
+  // const {
+  //   state: { favorite },
+  // } = useGlobalState();
 
   return (
     <Navbar variant="dark" expand="lg" sticky="top" bg="danger" className="p-4">
@@ -30,13 +30,13 @@ function Header() {
               </Link>
               <Link className="nav-link" to="/favorite">
                 Favorite{" "}
-                {favorite.length ? (
+                {/* {favorite.length ? (
                   <Badge className="text-dark" bg="warning">
                     {favorite.length}
                   </Badge>
                 ) : (
                   ""
-                )}
+                )} */}
               </Link>
             </Nav>
           </Navbar.Collapse>

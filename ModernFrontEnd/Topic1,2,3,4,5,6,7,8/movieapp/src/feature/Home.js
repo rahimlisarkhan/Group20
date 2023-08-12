@@ -8,9 +8,14 @@ import {
 } from "shared/provider/GlobalProvider/types";
 import { useGlobalState } from "shared/provider/GlobalProvider/useGlobalState";
 import MovieCard from "./home/components/MovieCard";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
-  const { state, dispatch } = useGlobalState();
+  // const { state, dispatch } = useGlobalState();
+
+  const movies = useSelector((state) => state);
+
+  console.log(movies);
 
   // as Components Did mount
   useEffect(() => {
@@ -18,7 +23,7 @@ export const Home = () => {
       const res = await getMovies();
       console.log(res);
 
-      dispatch({ type: FILL_MOVIES, payload: res.data.Search });
+      // dispatch({ type: FILL_MOVIES, payload: res.data.Search });
 
       // setMovies(res.data.Search);
     };
@@ -28,13 +33,13 @@ export const Home = () => {
 
   return (
     <div className="d-flex gap-4 flex-wrap py-5">
-      {state.movies?.map((movie, index) => (
+      {/* {state.movies?.map((movie, index) => (
         <MovieCard
           key={"movie" + index}
           {...movie}
           onFav={() => dispatch({ type: ADD_FAVORITE, payload: movie })}
         />
-      ))}
+      ))} */}
     </div>
   );
 };

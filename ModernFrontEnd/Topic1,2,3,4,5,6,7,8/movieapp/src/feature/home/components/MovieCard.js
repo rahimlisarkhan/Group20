@@ -38,7 +38,8 @@ function MovieCard({
           {imdbID && (
             <Button
               variant="danger"
-              onClick={() => navigate(`/movies/${imdbID}`)}
+              // onClick={() => navigate(`/movies/${imdbID}`)}
+              onClick={() => navigate(`/movies?slug=${imdbID}&tab=chat`)}
             >
               Go somewhere
             </Button>

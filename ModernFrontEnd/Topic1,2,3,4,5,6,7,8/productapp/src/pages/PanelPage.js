@@ -1,42 +1,39 @@
 import { PanelContainer } from "feature/admin/PanelContainer";
 import { PanelContent } from "feature/admin/PanelContent";
 import { PanelForm } from "feature/admin/PanelForm";
-import React, { Component } from "react";
+import React, { Component, useContext, useState } from "react";
 import { toast } from "react-toastify";
+import { globalContext } from "shared/provider/GlobalProvider";
 
-export class PanelPage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isShowMenu: false,
-      products: [],
-    };
+export const PanelPage = (props) => {
+  const [isShowMenu, setIsShowMenu] = useState();
 
-    this.handleAddProduct = this.handleAddProduct.bind(this);
-  }
+  let { count, setCount, handleHello, setProducts } = useContext(globalContext);
 
-  handleAddProduct(product) {
-    console.log(product);
+  console.log(count);
 
-    this.setState({ products: [product, ...this.state.products] });
+  const handleAddProduct = (product) => {
+    setProducts((prevProducts) => [product, ...prevProducts]);
 
     toast.success("Successfully created");
-  }
+  };
 
-  render() {
-    return (
-      <PanelContainer>
-        <PanelForm
-          title="Form title"
-          show={this.state.isShowMenu}
-          onData={this.handleAddProduct}
-          onClose={() => this.setState({ isShowMenu: false })}
-        />
-        <PanelContent
-          products={this.state.products}
-          onOpen={() => this.setState({ isShowMenu: true })}
-        />
-      </PanelContainer>
-    );
-  }
-}
+  return (
+    <PanelContainer>
+      {/* <button onClick={() => setCount((prev) => prev + 1)}>Artir</button> */}
+      <div>
+        <button onClick={() => setCount((prev) => prev + 1)}>Artir</button>
+
+        <button onClick={() => handleHello("Salam")}>SayHello</button>
+      </div>
+
+      <PanelForm
+        title="Form title"
+        show={isShowMenu}
+        onData={handleAddProduct}
+        onClose={() => setIsShowMenu(false)}
+      />
+      <PanelContent onOpen={() => setIsShowMenu(true)} />
+    </PanelContainer>
+  );
+};

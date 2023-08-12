@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-2">
+        <div
+          class="tab-container bg-primary p-5 d-flex flex-column gap-5 min-height"
+        >
+          <button class="tab-button active" id="tabButton1">1</button>
+          <button class="tab-button" id="tabButton2">2</button>
+          <button class="tab-button" id="tabButton3">3</button>
+          <button class="tab-button" id="tabButton4">4</button>
+        </div>
+      </div>
+
+      <div class="col-10">
+        <div class="content-page bg-info-subtle d-flex min-height p-5">
+          <div>
+            <div id="tab1" class="tab-content">Content of Tab 1</div>
+
+            <div id="tab2" class="tab-content" style="display: none">
+              Content of Tab 2
+            </div>
+
+            <div id="tab3" class="tab-content" style="display: none">
+              Content of Tab 3
+            </div>
+            <div id="tab4" class="tab-content" style="display: none">
+              Content of Tab 4
+
+              <div class="cardList">
+                <div class="card" onclick="selectCard(event,1)"></div>
+                <div class="card" onclick="selectCard(event,2)"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-footer bg-secondary align-self-end w-100">
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                class="btn btn-lg btn-light"
+                id="backBtn"
+                style="display: none"
+              >
+                Back
+              </button>
+              <button class="btn btn-lg btn-light" id="nextBtn">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/dom.js"></script>
+
+    <script src="./lib/tablist.js"></script>
+
+    <script src="./db/index.js"></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

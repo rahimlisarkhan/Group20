@@ -1,16 +1,19 @@
 import CategoryBottom from "feature/category/components/CategoryBottom";
 import CategoryTop from "feature/category/components/CategoryTop";
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import { globalContext } from "shared/provider/GlobalProvider";
 
-export class CategoryPage extends Component {
-  render() {
-    return (
-      <div>
-        <CategoryTop />
-        <CategoryBottom name="Category Bottom" />
-      </div>
-    );
-  }
-}
+export const CategoryPage = (props) => {
+  let { count, hello } = useContext(globalContext);
+
+  return (
+    <div>
+      <h1>Count:{count}</h1>
+      <h2>{hello}</h2>
+      <CategoryTop />
+      <CategoryBottom name="Category Bottom" />
+    </div>
+  );
+};
 
 export default CategoryPage;
