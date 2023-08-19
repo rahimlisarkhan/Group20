@@ -4,11 +4,38 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import { ProductCard } from "./ProductCard";
+// import ordersData from "./mock/orders.json";
+import { useEffect } from "react";
+import { getOrders, getUser, rmvOrder } from "./services/order";
+import Title from "./shared/components/Title/Title";
 
 function App() {
+  // console.log("ordersData", ordersData);
+
+  useEffect(() => {
+    // getOrders().then((res) => {
+    //   console.log("res", res);
+    // });
+
+    getUser().then((res) => {
+      console.log("res", res.data);
+    });
+  }, []);
+
+  const handleRemove = (id) => {
+    rmvOrder(id).then((res) => {
+      console.log("res", res);
+      // dispatch(filterItem(id))
+      // dispatch(filterItem(id));
+    });
+
+    // dispatch(filterItem(id));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
+        <Title />
         <Avatar
           alt="Remy Sharp"
           // sizes="sm"
@@ -19,12 +46,13 @@ function App() {
           size="large"
           variant="contained"
           color="warning"
+          onClick={() => handleRemove(4)}
         >
           Send
         </Button>
-        <Typography variant="body2" component="p">
+        {/* <Typography variant="body2" component="p">
           h1. Heading
-        </Typography>
+        </Typography> */}
         <ProductCard
           img="https://media.licdn.com/dms/image/D5603AQFd6eQTMGG8vg/profile-displayphoto-shrink_200_200/0/1680514093124?e=1695859200&v=beta&t=vD_ZrvkgQVobv2WAlQGvlyt-w4vhlEmiP2XisiUGdXk"
           title={"Product"}
