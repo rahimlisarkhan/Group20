@@ -5,31 +5,89 @@ import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import { ProductCard } from "./ProductCard";
 // import ordersData from "./mock/orders.json";
-import { useEffect } from "react";
-import { getOrders, getUser, rmvOrder } from "./services/order";
+import { getPosts, addPost, rmvPost } from "./services/order";
 import Title from "./shared/components/Title/Title";
+import {
+  QueryClient,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "react-query";
+
+// GET useQuery
+//POST PUT DELETE useMutation
 
 function App() {
+  const queryClient = useQueryClient();
+
+  const { data, isLoading, refetch } = useQuery("posts", getPosts, {
+    onSuccess: (res) => {
+      // toasty.succes("Success")
+      // console.log("Success", res);
+    },
+    refetchInterval: 10_000,
+    refetchOnWindowFocus: false,
+  });
+
+  const { mutate } = useMutation(addPost, {
+    onSuccess: (res) => {
+      const existingData = queryClient.getQueryData("posts");
+
+      console.log("existingData", existingData);
+
+      const newData = {
+        ...existingData,
+        data: [res.data, ...existingData.data],
+      };
+      queryClient.setQueryData("posts", newData);
+
+      console.log("Successfully..", res);
+    },
+  });
+
+  const { mutate: rmvMutate } = useMutation(rmvPost, {
+    onSuccess: (res) => {
+      console.log("Successfully.. delete", res);
+    },
+  });
+
+  // console.log(data);
+
+  // useEffect(()=>{
+
+  //   if(!slug) return
+  //   refetch()
+  // }[slug])
+
   // console.log("ordersData", ordersData);
+  // const [state, setState] = useState();
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // getOrders().then((res) => {
-    //   console.log("res", res);
-    // });
+  // useEffect(() => {
+  //   // getOrders().then((res) => {
+  //   //   console.log("res", res);
+  //   // });
 
-    getUser().then((res) => {
-      console.log("res", res.data);
-    });
-  }, []);
+  //   getUser().then((res) => {
+  //     console.log("res", res.data);
+  //     setState(res.data);
+  //     setLoading(false);
+  //   });
+
+  // }, []);
 
   const handleRemove = (id) => {
-    rmvOrder(id).then((res) => {
-      console.log("res", res);
-      // dispatch(filterItem(id))
-      // dispatch(filterItem(id));
-    });
+    rmvMutate(21);
+    //   // dispatch(filterItem(id));
+  };
 
-    // dispatch(filterItem(id));
+  const handleCreate = () => {
+    const form = {
+      title: "Post test",
+      body: "Lorem ipsum",
+    };
+
+    mutate(form);
   };
 
   return (
@@ -46,10 +104,19 @@ function App() {
           size="large"
           variant="contained"
           color="warning"
-          onClick={() => handleRemove(4)}
+          onClick={handleCreate}
         >
-          Send
+          Create
         </Button>
+        <Button
+          // startIcon={<Add />}
+          size="large"
+          variant="contained"
+          onClick={handleRemove}
+        >
+          Delete
+        </Button>
+
         {/* <Typography variant="body2" component="p">
           h1. Heading
         </Typography> */}
@@ -101,3 +168,23 @@ function App() {
 }
 
 export default App;
+
+const gruop = {
+  name: "My besteler",
+  colors: [],
+};
+
+save;
+
+const list = [
+  {
+    name: "My besteler",
+    colors: ["red", "yellow"],
+  },
+  {
+    name: "My besteler",
+    colors: ["purple", "brown"],
+  },
+];
+
+state = [...state.list, action.payload];

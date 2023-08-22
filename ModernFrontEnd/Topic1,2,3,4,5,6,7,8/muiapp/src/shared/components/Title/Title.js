@@ -7,8 +7,15 @@ import {
   TitleBig,
   Wrapper,
 } from "./TitleStyled";
+import { useQueryClient } from "react-query";
 
 function Title() {
+  const queryClient = useQueryClient();
+
+  const cacheData = queryClient.getQueryData("posts");
+
+  console.log("cacheData", cacheData?.data);
+
   return (
     <>
       <HeaderStyled></HeaderStyled>

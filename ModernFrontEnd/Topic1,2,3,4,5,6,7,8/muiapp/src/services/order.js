@@ -1,19 +1,20 @@
 import createInstance from "../shared/helper/createInstance";
 
-export const getOrders = async () => {
+export const getPosts = async () => {
   try {
-    const data = await createInstance({ method: "GET", url: "/orders" });
+    const data = await createInstance({ method: "GET", url: "/posts" });
     return data;
   } catch (err) {
     // toast.error(err.message);
   }
 };
 
-export const rmvOrder = async (id) => {
+export const addPost = async (form) => {
   try {
     const data = await createInstance({
-      method: "DELETE",
-      url: "/orders/" + id,
+      method: "POST",
+      url: "/posts",
+      data: form,
     });
     return data;
   } catch (err) {
@@ -21,11 +22,23 @@ export const rmvOrder = async (id) => {
   }
 };
 
-export const getUser = async () => {
+export const rmvPost = async (id) => {
   try {
-    const data = await createInstance({ method: "GET", url: "/user" });
+    const data = await createInstance({
+      method: "DELETE",
+      url: "/posts/" + id,
+    });
     return data;
   } catch (err) {
     // toast.error(err.message);
   }
 };
+
+// export const getUser = async () => {
+//   try {
+//     const data = await createInstance({ method: "GET", url: "/user" });
+//     return data;
+//   } catch (err) {
+//     // toast.error(err.message);
+//   }
+// };
