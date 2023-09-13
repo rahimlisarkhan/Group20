@@ -168,23 +168,3 @@ function App() {
 }
 
 export default App;
-
-const gruop = {
-  name: "My besteler",
-  colors: [],
-};
-
-save;
-
-const list = [
-  {
-    name: "My besteler",
-    colors: ["red", "yellow"],
-  },
-  {
-    name: "My besteler",
-    colors: ["purple", "brown"],
-  },
-];
-
-state = [...state.list, action.payload];

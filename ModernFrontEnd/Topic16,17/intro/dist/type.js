@@ -11,6 +11,7 @@
 //? 9.Any
 //? 10.Null
 //? 11.Undefined
+
 var num1 = 4;
 var married = false;
 var fullnameString = "Marry Doe";
@@ -23,25 +24,25 @@ var fruits = ["dsas", "dasda", "das"]; //! Array string
 var booleanArray = [true, false]; //! Array boolean
 var personinfo = [1, "say", "salam", 32]; //! Tuple
 function A(p, p2, p3) {
-    return true;
+  return true;
 }
 function B(p, p2, p3) {
-    console.log(p);
-    console.log(p3);
+  console.log(p);
+  console.log(p3);
 }
 var myObj = {
-    name: "fullname",
-    age: 43,
-    //   job: "Devel0per",
-    sayHello: function (text) {
-        console.log(this.name + text);
-    },
+  name: "fullname",
+  age: 43,
+  //   job: "Devel0per",
+  sayHello: function (text) {
+    console.log(this.name + text);
+  },
 };
 myObj.sayHello(2);
 //----
 var METHODS;
 (function (METHODS) {
-    METHODS["GET"] = "GET";
-    METHODS["POST"] = "POST";
+  METHODS["GET"] = "GET";
+  METHODS["POST"] = "POST";
 })(METHODS || (METHODS = {}));
 //---------

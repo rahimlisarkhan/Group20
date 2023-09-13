@@ -1,9 +1,7 @@
 {
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.5",
-    "axios": "^1.4.0",
-    "react-icons": "^4.10.1",
-    "react-redux": "^8.1.2",
-    "redux": "^4.2.1"
+    "@types/react-leaflet": "^3.0.0",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1"
   }
 }

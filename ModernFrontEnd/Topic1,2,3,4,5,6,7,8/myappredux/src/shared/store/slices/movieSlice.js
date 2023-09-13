@@ -1,16 +1,33 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getMovies } from "../../../services/movie";
+import { getMovies, getSearchMovie } from "../../../services/movie";
 
 export const allMovieAsync = createAsyncThunk("movie/fetchMovie", async () => {
-  const response = await getMovies();
-  // The value we return becomes the `fulfilled` action payload
-  return response.data.Search;
+  try {
+    const response = await getMovies();
+    // The value we return becomes the `fulfilled` action payload
+    return response.data.Search;
+  } catch (err) {
+    console.log(err.message);
+  }
 });
+
+export const searchMovieAsync = createAsyncThunk(
+  "movie/searchFetch",
+  async (title) => {
+    try {
+      const res = await getSearchMovie(title);
+      return res.data.Search;
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  }
+);
 
 const initialState = {
   movies: [],
   favorite: [],
   movieCount: 0,
+  isLoading: false,
 };
 
 const movieSlice = createSlice({
@@ -22,10 +39,18 @@ const movieSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(allMovieAsync.fulfilled, (state, action) => {
-      state.movies = action.payload;
-      state.movieCount = action.payload.length;
-    });
+    builder
+      .addCase(allMovieAsync.fulfilled, (state, action) => {
+        state.movies = action.payload;
+        state.movieCount = action.payload.length;
+      })
+      .addCase(searchMovieAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(searchMovieAsync.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.movies = action.payload;
+      });
   },
 });
 

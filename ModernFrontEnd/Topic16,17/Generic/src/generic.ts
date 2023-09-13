@@ -40,3 +40,29 @@ const responseBasket: ReponseType<BasketType> = {
     { id: 211212, products: [{ name: "Ciz2" }, { name: "Doner" }] },
   ],
 };
+
+interface ConvertType {
+  (num1: number, time: boolean): string;
+}
+
+const convert: ConvertType = (num1, time) => {
+  const result = `${num1}: ${time ? "clock" : "today"}`;
+
+  return result;
+};
+
+interface Time {
+  time: number;
+}
+
+interface GetExpiredItemsFunction {
+  <T extends Time>(num6: T): T[];
+}
+
+const M: GetExpiredItemsFunction = (num6) => [];
+
+function S() {
+  return [];
+}
+
+M({ time: 21 });

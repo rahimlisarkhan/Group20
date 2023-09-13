@@ -1,0 +1,42 @@
+interface USerInfo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: number;
+}
+
+// const myObj: Partial<USerInfo> = {};
+// const myObj: Required<USerInfo> = {
+//   title: "dasd",
+//   description: "dada",
+// //   createdAt: 1213123,
+// //   completed: true,
+// };
+
+// const myObj: Omit<USerInfo, "description"> = {
+//   title: "dasd",
+//   //   description: "dada",
+//   createdAt: 1213123,
+//   completed: true,
+// };
+
+const myObj: Omit<USerInfo, "description"> = {
+  title: "dasd",
+  //   description: "dada",
+  createdAt: 1213123,
+  completed: true,
+};
+
+interface Tarea {
+  title: string;
+  description: string;
+  complete: boolean;
+}
+
+type TareaReducido = Pick<Tarea, "title" | "description">;
+
+const tarea: TareaReducido = {
+  title: "Limpiar Recamara",
+  description: "Poner en orden todo lo que existe en la recamara",
+  // complete: true,
+};
